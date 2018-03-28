@@ -15,6 +15,6 @@ docker run \
   -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
   -p 80:80 \
   -p 443:443 \
-  --rm certbot:latest
+  --rm ascheucher/certbot:latest
 
 sudo systemctl start docker-compose-ephemeral@nginx-reverse-proxy.service
