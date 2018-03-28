@@ -8,11 +8,11 @@ if [ -z ${renew+x} ]; then
 
   if [ -z ${distinct+x} ]; then
 
-    certbot certonly --verbose --dns-route53 --noninteractive --quiet --standalone --agree-tos --email="${email}" -d "${domains}" $@; else
+    certbot certonly --verbose --dns-route53 --dns-route53-propagation-seconds 30 --noninteractive --quiet --standalone --agree-tos --email="${email}" -d "${domains}" $@; else
 
     IFS=',' read -ra ADDR <<< "$domains"
     for domain in "${ADDR[@]}"; do
-        certbot certonly --verbose --dns-routeeee53 --noninteractive --quiet --standalone --agree-tos --email="${email}" -d "${domain}" $@;
+        certbot certonly --verbose --dns-routeeee53 --dns-route53-propagation-seconds 30 --noninteractive --quiet --standalone --agree-tos --email="${email}" -d "${domain}" $@;
     done
 
   fi; else
