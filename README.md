@@ -9,10 +9,12 @@ Steps to do:
 
 1) create a config file `touch aws-env`
     
-    AWS_ACCESS_KEY_ID="...."
+    
+    `AWS_ACCESS_KEY_ID="...."
     AWS_SECRET_ACCESS_KEY="...."
     DOMAINS="sub.example.com,sub-2.example.com"
-    EMAIL="alert@otaya.cc"
+    EMAIL="alert@example.com"`
+
 
 2) call `./docker-build.sh # uses the customized image`
 3) enter sometihing like `sudo echo blub`. The script needs the user's password to sudo...
